@@ -1,0 +1,66 @@
+<form #empForm=ngForm (ngSubmit)="saveEmployee(employee)">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Create Employee</div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label for="empName">Name</label>
+        <input type="text" id=empName name=name [(ngModel)]="employee.name" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="empSalary">Salary</label>
+        <input type="text" id=empSalary name=salary [(ngModel)]="employee.salary" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="form-control">
+
+          <label class="radio-inline">
+            <input type="radio" value="male" name="gender" [(ngModel)]="employee.gender">Male
+          </label>
+
+          <label class="radio-inline">
+            <input type="radio" value="female" name="gender" [(ngModel)]="employee.gender">Female
+          </label>
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div class="form-control">
+
+          <label class="checkbox-inline">
+            <input type="checkbox" name="isActive" [(ngModel)]="employee.isActive">isActive
+          </label>
+        </div>
+      </div>
+
+      <!--
+      <div class="form-group">
+
+        <label for="department">Department</label>
+        <select id="department" name="department" [(ngModel)]="employee.department" class="form-control">
+          <option *ngFor="let dept of departments" [value]="dept.id">
+            {{dept.name}}
+          </option>
+
+        </select>
+
+      </div> -->
+
+
+    </div>
+
+
+    <div class="panel-footer">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+    <app-show-details [emp]="employee"></app-show-details>
+  </div>
+</form>
+
+
+
+<!--{{employee | json}}-->

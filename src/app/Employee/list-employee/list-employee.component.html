@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div style="text-align:center">
+    <h1>
+      Employee Details
+    </h1>
+
+  </div>
+
+  <div class="panel panel-primary" *ngFor="let employee of employees">
+    <div class="panel-heading">
+      <b>Details of {{employee.name}}</b>
+    </div>
+    <div class="panel-body">
+
+      <div>Id : {{employee.id}}</div>
+      <div>Name : {{employee.name | uppercase}}</div>
+      <div>Salary : {{employee.salary | currency}}</div>
+
+    </div>
+  </div>
+</div>
