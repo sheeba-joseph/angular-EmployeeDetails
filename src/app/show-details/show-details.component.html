@@ -1,0 +1,23 @@
+<div class="container">
+  <app-search-emp (RbtnClick)="OnRbtnChange($event)"></app-search-emp>
+
+  <table class="table table-bordered table-hover">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>SALARY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let emp of employees">
+        <tr *ngIf="SelectedSalary=='All'||emp.salary>=SelectedSalary">
+          <td class="align-content-center">{{emp.id}}</td>
+          <td>{{emp.name}}</td>
+          <td>{{emp.salary}}</td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>

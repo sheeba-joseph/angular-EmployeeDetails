@@ -1,0 +1,19 @@
+<div class="panel-default">
+
+
+  <div class="panel-heading">
+    <label>Search Employees by Salary : </label> &nbsp;
+    <label class="radio-inline">
+      <input type="radio" name="salary" value="All" [(ngModel)]="rbtnValue" (change)="OnRbtnClick()"> All
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="salary" value="3000" [(ngModel)]="rbtnValue" (change)="OnRbtnClick()"> Greater than 3000
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="salary" value="4000" [(ngModel)]="rbtnValue" (change)="OnRbtnClick()"> Greater than 4000
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="salary" value="5000" [(ngModel)]="rbtnValue" (change)="OnRbtnClick()"> Greater than 5000
+    </label>
+  </div>
+</div>
