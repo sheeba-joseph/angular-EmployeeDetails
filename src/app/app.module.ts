@@ -9,7 +9,9 @@ import { ListEmployeeComponent } from './Employee/list-employee/list-employee.co
 import { CreateEmployeeComponent } from './Employee/create-employee/create-employee.component';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { SearchEmpComponent } from './search-emp/search-emp.component';
-
+import { AddColorcodeComponent } from './employee/add-colorcode/add-colorcode.component';
+import { ColorPanelComponent } from './employee/add-colorcode/color-panel.component';
+import { EmployeeService } from './Employee/employee.service';
 
 
 
@@ -18,6 +20,7 @@ const appRoute: Routes = [
   { path: 'list', component: ListEmployeeComponent },
   { path: 'create', component: CreateEmployeeComponent },
   { path: 'search', component: ShowDetailsComponent },
+  { path: 'colorcode', component: AddColorcodeComponent },
   { path: '', redirectTo: '/list', pathMatch: 'full' }
 
 ];
@@ -28,14 +31,16 @@ const appRoute: Routes = [
     ListEmployeeComponent,
     CreateEmployeeComponent,
     ShowDetailsComponent,
-    SearchEmpComponent
+    SearchEmpComponent,
+    AddColorcodeComponent,
+    ColorPanelComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoute),
     FormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,6 +22,6 @@ export class SearchEmpComponent implements OnInit {
   OnRbtnClick() {
     this.RbtnClick.emit(this.rbtnValue);
     console.log(this.rbtnValue);
-    this.radioValue = this.rbtnValue;
+
   }
 }

@@ -1,0 +1,10 @@
+<div class="container">
+  <h3>Assign color code</h3>
+  Name :
+  <input type="text" name="name" [(ngModel)]="name"> Color:
+  <input type="text" name="color" [(ngModel)]="color"> &nbsp;
+
+  <button class="btn btn-primary" name="btnColor" value="btnColor" (click)="AddColor(name)">Add Color</button>
+  <p>{{test}}</p>
+  <app-color-panel></app-color-panel>
+</div>
