@@ -12,6 +12,7 @@ import { SearchEmpComponent } from './search-emp/search-emp.component';
 import { AddColorcodeComponent } from './employee/add-colorcode/add-colorcode.component';
 import { ColorPanelComponent } from './employee/add-colorcode/color-panel.component';
 import { EmployeeService } from './Employee/employee.service';
+import { InMemoryWebApiModule } from '../../node_modules/angular-in-memory-web-api';
 
 
 
