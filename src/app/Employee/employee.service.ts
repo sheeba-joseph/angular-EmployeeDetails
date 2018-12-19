@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Employee } from '../Models/Employee';
+import { Http, Headers } from '@angular/http';
+// import 'rxjs/add/operator/toPromise';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmployeeService {
-  listEmployee: Employee[] = [
-    { id: 1, name: 'Tom', salary: 3400, gender: 'Male', isActive: true, department: 2 },
-    { id: 2, name: 'Mary', salary: 4000, gender: 'Female', isActive: true, department: 2 },
-    { id: 3, name: 'Mark', salary: 4400, gender: 'Female', isActive: true, department: 2 },
-  ];
+  empUrl = 'api/employees';
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getEmployees(): Employee[] {
-    return this.listEmployee;
+  getEmployees(): Promise<Employee[]> {
+    return this.http.get(this.empUrl)
+      .toPromise()
+      .then(response => response.json().data as Employee[])
+      .catch(this.handleError);
+
+  }
+
+  handleError(error: any) {
+    console.log('An Error Occurred', error);
+    return Promise.reject(error.message || error);
   }
 }
